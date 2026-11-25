@@ -1,0 +1,225 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sanchay Agrawal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Layout: single column, 880px measure. Quiet header, name-first intro, project rows, then skills / about / contact. */
+  :root {
+    --bg: #0d1017;
+    --surface: #151a23;
+    --fg: #eef0f5;
+    --muted: #9aa3b2;
+    --line: #252c38;
+    --accent: #f2b134;
+    --accent-soft: #2a2415;
+    color-scheme: dark;
+    --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f7f7f4; --surface: #ffffff; --fg: #14171d; --muted: #5d6573;
+      --line: #e2e4e8; --accent: #a86a00; --accent-soft: #fbf0d9;
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f7f7f4; --surface: #ffffff; --fg: #14171d; --muted: #5d6573;
+    --line: #e2e4e8; --accent: #a86a00; --accent-soft: #fbf0d9;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    padding-block: 0 4rem;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 880px; margin: 0 auto; }
+
+  header.top {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding-block: 1.25rem; flex-wrap: wrap;
+  }
+  .brand { font-family: var(--font-display); font-weight: 600; text-decoration: none; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+  nav a:hover { color: var(--fg); }
+
+  .intro { padding-block: 4rem 3rem; border-bottom: 1px solid var(--line); }
+  .status {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.8rem; color: var(--accent); background: var(--accent-soft);
+    padding: 0.25rem 0.75rem; border-radius: 999px; margin-bottom: 1.5rem;
+  }
+  .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  h1 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.05; letter-spacing: -0.03em;
+    margin: 0 0 1.25rem; text-wrap: balance;
+  }
+  .lede { font-size: 1.15rem; color: var(--muted); max-width: 60ch; margin: 0 0 2rem; }
+  .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; font: inherit; font-weight: 500; font-size: 0.95rem;
+    padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration: none; cursor: pointer;
+    border: 1px solid var(--line); background: var(--surface); color: var(--fg);
+  }
+  .btn:hover { border-color: var(--muted); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn.primary:hover { filter: brightness(1.08); }
+
+  section { padding-block: 3.5rem; border-bottom: 1px solid var(--line); scroll-margin-top: 1rem; }
+  section:last-of-type { border-bottom: 0; }
+  h2 {
+    font-family: var(--font-display); font-weight: 600; font-size: 0.85rem;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 2rem;
+  }
+
+  .projects { display: grid; gap: 1.25rem; }
+  .project {
+    display: grid; grid-template-columns: 1fr; gap: 0.75rem;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem;
+  }
+  .project h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  .project p { margin: 0; color: var(--muted); max-width: 62ch; }
+  .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 0.25rem 0 0; }
+  .meta li { font-family: var(--font-mono); font-size: 0.75rem; padding: 0.15rem 0.6rem; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); }
+  .links { display: flex; gap: 1.25rem; margin-top: 0.5rem; font-size: 0.9rem; font-weight: 500; }
+  .links a { color: var(--accent); text-underline-offset: 3px; }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+  .skills h3 { font-size: 0.95rem; margin: 0 0 0.5rem; font-weight: 600; }
+  .skills ul { list-style: none; padding: 0; margin: 0; color: var(--muted); }
+  .skills li { padding-block: 0.15rem; }
+
+  .about { display: grid; gap: 1rem; max-width: 62ch; }
+  .about p { margin: 0; }
+
+  .contact-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .email { font-family: var(--font-mono); font-size: 1.05rem; user-select: all; }
+  .social { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .social a { color: var(--accent); text-underline-offset: 3px; }
+
+  footer { padding-top: 2rem; color: var(--muted); font-size: 0.85rem; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .project, .btn { transition: border-color 0.15s ease, filter 0.15s ease; }
+    .project:hover { border-color: var(--muted); }
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">Sanchay Agrawal</a>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="intro">
+      <span class="status">Open to internships and freelance work</span>
+      <h1>I build small, useful web projects.</h1>
+      <p class="lede">I'm a developer who likes turning everyday problems into simple tools that work. Below are a few projects I've built, with the code and a live demo for each.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <section id="projects">
+      <h2>Selected projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Expense Splitter</h3>
+          <p>Add friends and shared expenses, and the app works out who owes whom with the fewest payments. Built for trips and shared flats.</p>
+          <ul class="meta"><li>JavaScript</li><li>HTML/CSS</li><li>LocalStorage</li></ul>
+          <div class="links"><a href="https://github.com/" target="_blank" rel="noopener">Code</a><a href="https://example.com" target="_blank" rel="noopener">Live demo</a></div>
+        </article>
+        <article class="project">
+          <h3>Weather Dashboard</h3>
+          <p>Search any city and see a five-day forecast with temperature, rain chance and wind. Responsive layout that works well on a phone.</p>
+          <ul class="meta"><li>JavaScript</li><li>REST API</li><li>Open-Meteo</li></ul>
+          <div class="links"><a href="https://github.com/" target="_blank" rel="noopener">Code</a><a href="https://claude.ai/artifact/7j36TZyRMSuhTgWPtHS3HG" target="_blank" rel="noopener">Live demo</a></div>
+        </article>
+        <article class="project">
+          <h3>Task Tracker CLI</h3>
+          <p>A command-line to-do app with due dates, priorities and filters. Stores tasks in a local JSON file and needs no setup beyond installing it.</p>
+          <ul class="meta"><li>Python</li><li>argparse</li><li>JSON</li></ul>
+          <div class="links"><a href="https://github.com/" target="_blank" rel="noopener">Code</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Languages</h3><ul><li>JavaScript</li><li>Python</li><li>HTML &amp; CSS</li></ul></div>
+        <div><h3>Frameworks</h3><ul><li>React</li><li>Node.js</li><li>Flask</li></ul></div>
+        <div><h3>Tools</h3><ul><li>Git &amp; GitHub</li><li>VS Code</li><li>Figma</li></ul></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="about">
+        <p>I'm a [your role or course] based in [your city]. I started building small projects to learn how things work, and I still prefer finishing a simple tool people actually use over starting a large one I never ship.</p>
+        <p>Outside of coding I enjoy [a hobby or two]. I'm currently learning [a skill you are working on].</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-row">
+        <span class="email" id="email">you@example.com</span>
+        <button class="btn" id="copy" type="button">Copy email</button>
+      </div>
+      <div class="social">
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 Sanchay Agrawal</footer>
+</div>
+
+<script>
+  var copyBtn = document.getElementById("copy");
+  var emailEl = document.getElementById("email");
+  copyBtn.addEventListener("click", function () {
+    var text = emailEl.textContent;
+    function done() {
+      copyBtn.textContent = "Copied";
+      setTimeout(function () { copyBtn.textContent = "Copy email"; }, 1800);
+    }
+    function fallback() {
+      var r = document.createRange();
+      r.selectNodeContents(emailEl);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else {
+      fallback();
+    }
+  });
+</script>
+
+</body></html>
